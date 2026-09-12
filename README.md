@@ -191,8 +191,8 @@ The system executes a human-defined improvement procedure and retains accepted r
 | --- | --- |
 | [STaR](https://arxiv.org/abs/2203.14465) | Bootstraps model-generated rationales into a fixed, correctness-filtered self-training loop. |
 | [Constitutional AI](https://arxiv.org/abs/2212.08073) | Establishes critique-and-revision with AI feedback under a human-specified constitution. |
-| [ReST](https://arxiv.org/abs/2308.08998) | Alternates generation, reward filtering, and model updates in a canonical repeated self-training pipeline. |
-| [SPIN](https://arxiv.org/abs/2401.01335) | Uses previous model iterations to generate training comparisons for self-play fine-tuning. |
+| [ReST](https://arxiv.org/abs/2308.08998) | Generates an offline dataset with the current policy, then improves that policy with offline reinforcement learning. |
+| [SPIN](https://arxiv.org/abs/2401.01335) | Generates training data from earlier policy iterations and refines the policy against human-annotated responses. |
 | [Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Uses model-generated judgments as a fixed-protocol training signal. |
 | [Meta-Rewarding Language Models](https://arxiv.org/abs/2407.19594) | Extends AI-feedback training to iterative refinement of the judging signal. |
 
@@ -1311,11 +1311,11 @@ The system chooses how to improve a specified target, while the objective, evalu
 
 | Paper | Representative mechanism |
 | --- | --- |
-| [AutoPrompt](https://arxiv.org/abs/2010.15980) | Searches discrete prompt tokens under a fixed task template and score. |
+| [AutoPrompt](https://arxiv.org/abs/2010.15980) | Uses gradient-guided search to generate discrete prompt tokens for a fixed task. |
 | [Automatic Prompt Engineer](https://arxiv.org/abs/2211.01910) | Uses an LLM to propose prompt instructions and an external evaluator to select them. |
 | [ProTeGi](https://arxiv.org/abs/2305.03495) | Optimizes prompts through textual gradients and beam search. |
 | [EvoPrompt](https://arxiv.org/abs/2309.08532) | Treats prompt optimization as evolutionary search. |
-| [Eureka](https://arxiv.org/abs/2310.12931) | Searches for reward programs while the task objective remains externally specified. |
+| [Eureka](https://arxiv.org/abs/2310.12931) | Uses LLM-guided evolutionary optimization over reward code for externally specified RL tasks. |
 | [ADAS](https://arxiv.org/abs/2408.08435) | Proposes, evaluates, and archives improved agentic system designs. |
 | [AFlow](https://arxiv.org/abs/2410.10762) | Searches code-represented agent workflows with execution feedback. |
 
@@ -2137,9 +2137,9 @@ The learner's evolving state influences the experience, task, or curriculum acqu
 | [POET](https://arxiv.org/abs/1901.01753) | Co-evolves environments and solvers to generate an expanding adaptive curriculum. |
 | [Voyager](https://arxiv.org/abs/2305.16291) | Couples automatic curricula with a persistent skill library for open-ended embodied learning. |
 | [EnvGen](https://arxiv.org/abs/2403.12014) | Generates and adapts training environments for embodied agents. |
-| [Absolute Zero](https://arxiv.org/abs/2505.03335) | Uses self-play to create and solve code-grounded reasoning tasks without external data. |
+| [Absolute Zero](https://arxiv.org/abs/2505.03335) | Lets a single model propose and solve code-grounded tasks, with a code executor verifying both tasks and answers. |
 | [R-Zero](https://arxiv.org/abs/2508.05004) | Co-evolves task proposal and solving to create new learning experience from zero data. |
-| [SIMA 2](https://arxiv.org/abs/2512.04797) | Uses capability-conditioned practice and feedback to acquire skills in virtual worlds. |
+| [SIMA 2](https://arxiv.org/abs/2512.04797) | Uses Gemini to generate tasks and rewards so the agent can autonomously learn skills in a new virtual environment. |
 
 <details>
 <summary><strong>Browse the full L3 catalog (65 papers)</strong></summary>
@@ -2486,7 +2486,7 @@ Reusable memory, skills, or deployed agent components persistently alter later b
 
 | Paper | Representative mechanism |
 | --- | --- |
-| [OS-Copilot](https://arxiv.org/abs/2402.07456) | Retains and refines skills and memory for self-improving computer agents. |
+| [OS-Copilot](https://arxiv.org/abs/2402.07456) | Accumulates skills from prior computer tasks to improve a generalist OS agent. |
 | [Trace2Skill](https://arxiv.org/abs/2603.25158) | Distills trajectory-local lessons into transferable agent skills. |
 | [APEX](https://arxiv.org/abs/2605.21240) | Uses autonomous policy exploration to improve deployed agent behavior. |
 | [Metis](https://arxiv.org/abs/2606.24151) | Bridges textual and code memory for self-evolving agents. |
@@ -2747,7 +2747,7 @@ The system improves the mechanism that produces future improvements, including s
 | [Self-Taught Optimizer](https://arxiv.org/abs/2310.02304) | Recursively improves the code-generation procedure that drives later search rounds. |
 | [Gödel Agent](https://arxiv.org/abs/2410.04444) | Provides a self-referential agent framework that can revise its own improvement routines. |
 | [Darwin Gödel Machine](https://arxiv.org/abs/2505.22954) | Evolves coding agents through evaluated code modifications and inherited successful descendants. |
-| [AIRA2](https://arxiv.org/abs/2603.26499) | Retains research artifacts and revises research-agent bottlenecks across future experiments. |
+| [AIRA2](https://arxiv.org/abs/2603.26499) | Targets AI-research-agent bottlenecks through asynchronous experimentation, hidden-consistent evaluation, and interactive ReAct operators. |
 | [MOSS](https://arxiv.org/abs/2605.22794) | Evolves autonomous agents by rewriting source-level system components. |
 | [The Red Queen Gödel Machine](https://arxiv.org/abs/2606.26294) | Co-evolves agents and evaluators, making the improvement criterion part of the meta-level loop. |
 
